@@ -283,6 +283,7 @@ import { generateSimpleRandomBoard } from './utils/boardGenerator';
 import HowToPlay from './components/HowToPlay';
 import SuccessModal from './components/SuccessModal';
 import LevelSelect from './components/LevelSelect';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   // Game state
@@ -748,6 +749,7 @@ function App() {
           </div>
         </>
       )}
+      <Analytics />
     </div>
   );
 }
