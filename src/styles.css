@@ -1,0 +1,236 @@
+/* Main application styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+  }
+  
+  .App {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Game container styles */
+  .game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .game-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  
+  /* Welcome screen styles */
+  .welcome-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .welcome-screen h2 {
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  .size-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .size-btn {
+    padding: 10px 18px;
+    font-size: 16px;
+    background-color: #4a7bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .size-btn:hover {
+    background-color: #3a63cc;
+  }
+  
+  /* Game board styles */
+  .game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid #ccd3e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  
+  .game-cell {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ccd3e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: all 0.15s ease;
+  }
+  
+  .game-cell:hover {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .queen {
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .blocked {
+    color: #e53e3e;
+    font-weight: bold;
+  }
+  
+  .attacked {
+    position: relative;
+  }
+  
+  .attacked::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.1);
+    pointer-events: none;
+  }
+  
+  /* Controls styles */
+  .game-controls {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .control-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .control-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .reset-btn {
+    background-color: #4a7bff;
+    color: white;
+  }
+  
+  .reset-btn:hover {
+    background-color: #3a63cc;
+  }
+  
+  .new-game-btn {
+    background-color: #718096;
+    color: white;
+  }
+  
+  .new-game-btn:hover {
+    background-color: #4a5568;
+  }
+  
+  .queens-counter {
+    font-size: 14px;
+    color: #4a5568;
+  }
+  
+  /* Solved message */
+  .solved-message {
+    background-color: #9ae6b4;
+    color: #22543d;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    animation: celebrate 1s ease-in-out;
+  }
+  
+  @keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Rules styles */
+  .game-rules {
+    margin-top: 30px;
+    background-color: #edf2f7;
+    padding: 16px;
+    border-radius: 6px;
+    text-align: left;
+  }
+  
+  .game-rules h3 {
+    margin-top: 0;
+    color: #2d3748;
+  }
+  
+  .game-rules ul {
+    padding-left: 24px;
+    margin-bottom: 0;
+  }
+  
+  .game-rules li {
+    margin-bottom: 8px;
+    color: #4a5568;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .game-cell {
+      width: 36px;
+      height: 36px;
+      font-size: 22px;
+    }
+    
+    .queen {
+      font-size: 24px;
+    }
+    
+    .game-controls {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .queens-counter {
+      margin-top: 8px;
+    }
+  }
